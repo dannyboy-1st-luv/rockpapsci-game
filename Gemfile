@@ -29,7 +29,6 @@ gem 'jbuilder', '~> 2.7'
 gem 'bootsnap', '>= 1.4.4', require: false
 
 group :development, :test do
-  gem 'sqlite3' , '~> 1.3.6'
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
 end
@@ -53,8 +52,12 @@ group :test do
   gem 'webdrivers'
 end
 
+group :development, :test do
+ gem 'sqlite3' , '~> 1.3.6'
+end
+
 group :production do
-gem 'pg'
+  gem 'pg'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
